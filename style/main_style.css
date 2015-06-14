@@ -1,0 +1,18 @@
+body {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    color: #f0f0f0;
+    background-color: #1e1f34 !important;
+}
+a {
+    color: #f0f0f0;
+}
+
+.leaderboarddata tr:nth-child(5)
+{
+	text-align:right !important;
+}
+
+.aligned-right {
+	text-align right;
+}

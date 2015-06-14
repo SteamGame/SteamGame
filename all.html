@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>SteamGame</title>
+<link rel="stylesheet" type="text/css" href="style/datatables.css?v=purple1">
+<link rel="stylesheet" type="text/css" href="style/main_style.css?v=purple1">
+
+<script type="text/javascript" charset="utf8" src="style/jquery.js?v=purple1"></script>
+<script type="text/javascript" charset="utf8" src="style/datatables.js?v=purple1"></script>
+<script type="text/javascript" charset="utf8" src="style/main_all.js?v=purple1"></script>
+<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=purple1"></script>
+<script type="text/javascript" charset="utf8" src="style/countdown.js?v=purple1"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+<center><h1><a href="/">SteamGame</a> | all rooms</h1>
+<h2>updates every minute</h2>
+        <center><h3>Reset - <span id="resettime">unknown</span></h3></center>
+        <script>
+var clockTimer = undefined;
+var innerClockTimer = undefined;
+
+$(document).ready(function() {
+        updateClockDate();
+        setInterval(function() {
+                clearInterval(innerClockTimer);
+                updateClockDate();
+        }, 15000);
+});
+
+function updateClockDate() {
+        clearInterval(clockTimer);
+        $.get('/data/nextrestart.txt', function(data) {
+                var clock = document.getElementById("resettime");
+                var daterestart = new Date(data * 1000);
+                clock.innerHTML = countdown(daterestart).toString();
+
+                var innerClockTimer = setInterval(function() {
+                        clock.innerHTML = countdown(daterestart).toString();
+                }, 1000);
+        });
+}
+</script>
+
+<table id="data" class="display compact" cellspacing="0" width="85%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Level</th>
+                <th><i class="fa fa-level-up"></i></th>
+                <th>Players</th>
+                <th>Active</th>
+                <th>Clicks</th>
+                <th><i class="fa fa-level-up"></i></th>
+		<th>Abilities</th>
+            </tr>
+        </thead>
+ 
+    </table>
+</center>
+</body>
+</html>
