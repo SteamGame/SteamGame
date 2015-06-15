@@ -23,7 +23,7 @@ F
 		<script>
 			var clockTimer = undefined;
 			var innerClockTimer = undefined;
-
+			updateClockDate();
 			$(document).ready(function() {
 				updateClockDate();
 				setInterval(function() {
@@ -42,7 +42,7 @@ F
 					var lastreset_time = new Date(data[0] * 1000);
 					var nextreset_time = new Date(data[1] * 1000);
 					lastreset_clock.innerHTML = countdown(lastreset_time).toString();
-					nextreset_clock.innerHTML = countdown(nextreset_clock).toString();
+					nextreset_clock.innerHTML = countdown(nextreset_time).toString();
 
 					var innerClockTimer = setInterval(function() {
 						lastreset_clock.innerHTML = countdown(lastreset_time).toString();
