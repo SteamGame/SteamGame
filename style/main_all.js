@@ -8,10 +8,8 @@ $(document).ready(function() {
     		{ type: 'num-html', className: "dt-right", "targets": [ 0,1,2,3,4,5,6,7,8 ] }
   	]
     } );
-} );
-
- 
 setInterval( function () {
-	$('#data').DataTable().ajax.reload(null, false);
-}, 30000 );
+        $('#data').DataTable().ajax.reload(null, false);
+}, 20000 );
+} );
 

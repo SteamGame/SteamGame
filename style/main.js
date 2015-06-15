@@ -10,10 +10,11 @@ $(document).ready(function() {
 		{ className: "dt-center", "targets": [ 1 ], "orderable": false }
   	]
     } );
+setInterval( function () {
+        $('#leaderboarddata').DataTable().ajax.reload(null, false);
+}, 10000 );
+	
 } );
 
  
-setInterval( function () {
-	$('#leaderboarddata').DataTable().ajax.reload(null, false);
-}, 10000 );
 
