@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     color: #f0f0f0;
     background-color: #1e1f34 !important;
+    text-align:center;
 }
 a {
     color: #f0f0f0;
@@ -15,4 +16,17 @@ a {
 
 .aligned-right {
 	text-align right;
+}
+
+.psa {
+	color: #FDD835;
+}
+
+
+a.psa {
+	color: #B89600;
+}
+
+.dangerous {
+	color: red;
 }
