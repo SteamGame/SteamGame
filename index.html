@@ -1,25 +1,32 @@
 <html>
-F
 <head>
 	<title>SteamGame</title>
-	<link rel="stylesheet" type="text/css" href="style/datatables.css?v=purple5">
-	<link rel="stylesheet" type="text/css" href="style/main_style.css?v=purple5">
+	<link rel="stylesheet" type="text/css" href="style/datatables.css?v=purple9">
+	<link rel="stylesheet" type="text/css" href="style/main_style.css?v=purple9">
 
-	<script type="text/javascript" charset="utf8" src="style/jquery.js?v=purple5"></script>
-	<script type="text/javascript" charset="utf8" src="style/datatables.js?v=purple5"></script>
-	<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=purple5"></script>
-	<script type="text/javascript" charset="utf8" src="style/main.js?v=purple5"></script>
-	<script type="text/javascript" charset="utf8" src="style/analytics.js?v=purple5"></script>
-	<script type="text/javascript" charset="utf8" src="style/countdown.js?v=purple5"></script>
+	<script type="text/javascript" charset="utf8" src="style/jquery.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/datatables.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/main.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/analytics.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/countdown.js?v=purple9"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 	<br/><br/><br/>
 	<div style="margin: 0,max-width:1024px">
-		<center><h1>SteamGame Leaderboard | <a href="all.html">all rooms</a></h1></center>
-		<center><h3>Last reset was <span id="lastreset">unknown</span> ago</h3></center>
-		<center><h3>Next reset in: <span id="nextreset">unknown</span></h3></center>
+		<h1>SteamGame Leaderboard | <a href="all.html">all rooms</a></h1>
+		<h3>Last reset was <span id="lastreset">unknown</span> ago</h3>
+		<h3>Next reset in: <span id="nextreset">unknown</span></h3>
+	
+		<h2 class="psa">PSA</h2>	
+		<p class="psa">
+			<a class="psa" href="https://github.com/SteamDatabase/steamSummerMinigame/blob/master/autoPlay.user.js">SteamDatabase autoclicker script</a> is more up to date, wchill's fork includes 
+			<a class="dangerous" href="https://github.com/wchill/steamSummerMinigame/blob/1486416b87b806526a8ea3b86b81e1642b56caa3/autoPlay.user.js#L1509-L1540">dangerous remote code execution</a> that could compromise your Steam account.<br/>
+			In meanwhile, the control script threads have been pulled off, it's probably safe to assume the same URLs cannot be regenerated. 
+			<a class="psa" href="/xss-in-steam/">Why is it dangerous?</a>
 
+		</p>
 		<script>
 			var clockTimer = undefined;
 			var innerClockTimer = undefined;
@@ -69,12 +76,10 @@ F
 			</thead>
 		</table>
 		<br/>
-		<center>        auto-updates every &#126;10seconds<br/>
 			contacts: <a href="//steamcommunity.com/id/chauffer">my steam profile</a> <a href="//github.com/chauffer">github</a><br/>
 			api: <a href="/data/api/leaderboard.json">leaderboard</a> <a href="/data/api/all.json">all</a><br/><br/><br/>
 			<a href="https://github.com/chauffer/steamSummerMinigame">autoclicker</a><br/>
 			made with <i class="fa fa-heart-o"></i> by ChauffeR, <a href="https://lab.xpaw.me/towerattack.php?legit">original project</a> by <a href="//xpaw.me">xPaw</a><br/>
-		</center>
 	</div>
 </body>
 </html>
