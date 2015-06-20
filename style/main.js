@@ -6,13 +6,15 @@ $(document).ready(function() {
         "iDisplayLength": 20,
 
  	"columnDefs": [
-    		{ type: 'num-html', className: "dt-right", "targets": [ 0, 2,3,4,5,6,7,8,9 ] },
+    		{ type: 'num-html', className: "dt-right", "targets": [ 0, 2,3,4,5,6,7,8,9,10,11 ] },
+		{ 'targets': [10, 11], 'visible': false},
 		{ className: "dt-center", "targets": [ 1 ], "orderable": false }
   	]
+	
     } );
 setInterval( function () {
         $('#leaderboarddata').DataTable().ajax.reload(null, false);
-}, 10000 );
+}, 5000 );
 	
 } );
 

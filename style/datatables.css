@@ -305,7 +305,7 @@ table.dataTable td {
     margin-top: -25px;
     padding-top: 20px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: white;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(30, 31, 52, 0)), color-stop(25%, rgba(30, 31, 52, 0.9)), color-stop(75%, rgba(30, 31, 52, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
     /* Chrome,Safari4+ */

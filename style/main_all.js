@@ -5,7 +5,7 @@ $(document).ready(function() {
         "order": [[ 0, "asc" ]],
 	"iDisplayLength": 999999,
  	"columnDefs": [
-    		{ type: 'num-html', className: "dt-right", "targets": [ 0,1,2,3,4,5,6,7,8 ] }
+    		{ type: 'num-html', className: "dt-right", "targets": [ 0,1,2,3,4,5,6,7,8,9,10 ] }
   	]
     } );
 setInterval( function () {
