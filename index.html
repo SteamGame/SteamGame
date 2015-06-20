@@ -1,15 +1,15 @@
 <html>
 <head>
 	<title>SteamGame</title>
-	<link rel="stylesheet" type="text/css" href="style/datatables.css?v=purple9">
-	<link rel="stylesheet" type="text/css" href="style/main_style.css?v=purple9">
+	<link rel="stylesheet" type="text/css" href="style/datatables.css?v=BADMEDIC5">
+	<link rel="stylesheet" type="text/css" href="style/main_style.css?v=BADMEDIC5">
 
-	<script type="text/javascript" charset="utf8" src="style/jquery.js?v=purple9"></script>
-	<script type="text/javascript" charset="utf8" src="style/datatables.js?v=purple9"></script>
-	<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=purple9"></script>
-	<script type="text/javascript" charset="utf8" src="style/main.js?v=purple9"></script>
-	<script type="text/javascript" charset="utf8" src="style/analytics.js?v=purple9"></script>
-	<script type="text/javascript" charset="utf8" src="style/countdown.js?v=purple9"></script>
+	<script type="text/javascript" charset="utf8" src="style/jquery.js?v=BADMEDIC5"></script>
+	<script type="text/javascript" charset="utf8" src="style/datatables.js?v=BADMEDIC5"></script>
+	<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=BADMEDIC5"></script>
+	<script type="text/javascript" charset="utf8" src="style/main.js?v=BADMEDIC5"></script>
+	<script type="text/javascript" charset="utf8" src="style/analytics.js?v=BADMEDIC5"></script>
+	<script type="text/javascript" charset="utf8" src="style/countdown.js?v=BADMEDIC5"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -18,7 +18,8 @@
 		<h1>SteamGame Leaderboard | <a href="all.html">all rooms</a></h1>
 		<h3>Last reset was <span id="lastreset">unknown</span> ago</h3>
 		<h3>Next reset in: <span id="nextreset">unknown</span></h3>
-		<script>
+		<h3 class="psa">Room reporting for 100M has been disabled in the leaderboard. Go to 'all rooms' to see the 100M rooms.<br/>
+</h3>		<script>
 			var clockTimer = undefined;
 			var innerClockTimer = undefined;
 			updateClockDate();
@@ -62,11 +63,17 @@
 					<th>Active</th>
 					<th>Clicks</th>
 					<th><i class="fa fa-level-up"></i></th>
-					<th>Abilities </th>
+					<th>Abilities</th>
+					<th>WH</th>
+                                        <th><i class="fa fa-level-up"></i></th>                                                                                          
 				</tr>
 			</thead>
 		</table>
+
+                <br/>
+
 		<br/>
+			updates every 5sec</br>
 			contacts: <a href="//steamcommunity.com/id/chauffer">my steam profile</a> <a href="//github.com/chauffer">github</a><br/>
 			api: <a href="/data/api/leaderboard.json">leaderboard</a> <a href="/data/api/all.json">all</a><br/><br/><br/>
 			<a href="https://github.com/chauffer/steamSummerMinigame">autoclicker</a><br/>
