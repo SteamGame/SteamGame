@@ -30,7 +30,7 @@
 
                         function updateClockDate() {
                                 clearInterval(clockTimer);
-                                $.getJSON('/data/reset.txt', function(data) {
+                                $.getJSON('/data/reset.json?v=' + Date.now * Math.random(), function(data) {
 
                                         var lastreset_clock = document.getElementById("lastreset");
                                         var nextreset_clock = document.getElementById("nextreset");
