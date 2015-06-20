@@ -1,45 +1,52 @@
 <html>
 <head>
 <title>SteamGame</title>
-<link rel="stylesheet" type="text/css" href="style/datatables.css?v=purple6">
-<link rel="stylesheet" type="text/css" href="style/main_style.css?v=purple6">
+<link rel="stylesheet" type="text/css" href="style/datatables.css?v=BADMEDIC4">
+<link rel="stylesheet" type="text/css" href="style/main_style.css?v=BADMEDIC4">
 
-<script type="text/javascript" charset="utf8" src="style/jquery.js?v=purple6"></script>
-<script type="text/javascript" charset="utf8" src="style/datatables.js?v=purple6"></script>
-<script type="text/javascript" charset="utf8" src="style/main_all.js?v=purple6"></script>
-<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=purple6"></script>
-<script type="text/javascript" charset="utf8" src="style/countdown.js?v=purple6"></script>
+<script type="text/javascript" charset="utf8" src="style/jquery.js?v=BADMEDIC4"></script>
+<script type="text/javascript" charset="utf8" src="style/datatables.js?v=BADMEDIC4"></script>
+<script type="text/javascript" charset="utf8" src="style/main_all.js?v=BADMEDIC4"></script>
+<script type="text/javascript" charset="utf8" src="style/numhtml.js?v=BADMEDIC4"></script>
+<script type="text/javascript" charset="utf8" src="style/countdown.js?v=BADMEDIC4"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 <center><h1><a href="/">SteamGame</a> | all rooms</h1>
 <h2>updates every minute</h2>
-        <center><h3>Reset - <span id="resettime">unknown</span></h3></center>
-        <script>
-var clockTimer = undefined;
-var innerClockTimer = undefined;
+                <h3>Last reset was <span id="lastreset">unknown</span> ago</h3>
+                <h3>Next reset in: <span id="nextreset">unknown</span></h3>
+</h3>           <script>
+                        var clockTimer = undefined;
+                        var innerClockTimer = undefined;
+                        updateClockDate();
+                        $(document).ready(function() {
+                                updateClockDate();
+                                setInterval(function() {
+                                        clearInterval(innerClockTimer);
+                                        updateClockDate();
+                                }, 15000);
+                        });
 
-$(document).ready(function() {
-        updateClockDate();
-        setInterval(function() {
-                clearInterval(innerClockTimer);
-                updateClockDate();
-        }, 15000);
-});
+                        function updateClockDate() {
+                                clearInterval(clockTimer);
+                                $.getJSON('/data/reset.txt', function(data) {
 
-function updateClockDate() {
-        clearInterval(clockTimer);
-        $.get('/data/nextrestart.txt', function(data) {
-                var clock = document.getElementById("resettime");
-                var daterestart = new Date(data * 1000);
-                clock.innerHTML = countdown(daterestart).toString();
+                                        var lastreset_clock = document.getElementById("lastreset");
+                                        var nextreset_clock = document.getElementById("nextreset");
 
-                var innerClockTimer = setInterval(function() {
-                        clock.innerHTML = countdown(daterestart).toString();
-                }, 1000);
-        });
-}
-</script>
+                                        var lastreset_time = new Date(data[0] * 1000);
+                                        var nextreset_time = new Date(data[1] * 1000);
+                                        lastreset_clock.innerHTML = countdown(lastreset_time).toString();
+                                        nextreset_clock.innerHTML = countdown(nextreset_time).toString();
+
+                                        var innerClockTimer = setInterval(function() {
+                                                lastreset_clock.innerHTML = countdown(lastreset_time).toString();
+                                                nextreset_clock.innerHTML = countdown(nextreset_time).toString();
+                                        }, 1000);
+                                });
+                        }
+                </script>
 
 <table id="data" class="display compact" cellspacing="0" width="85%">
         <thead>
@@ -53,6 +60,8 @@ function updateClockDate() {
                 <th>Clicks</th>
                 <th><i class="fa fa-level-up"></i></th>
 		<th>Abilities</th>
+		<th>WH</th>
+		<th><i class="fa fa-level-up"></i></th>
             </tr>
         </thead>
  
