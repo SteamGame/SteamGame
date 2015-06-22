@@ -34,7 +34,7 @@
 			});
 
 			function updatePSA() {
-				$.getJSON('/data/psa.json?v=' + Date.now * Math.random(), function (data) {
+				$.getJSON('/data/psa.json?v=' + Date.now() * Math.random(), function (data) {
 				var psa = document.getElementById("psa");
 				var htmlpsa = "";
 				for(var i = 0; i < data.length; i++)
@@ -48,7 +48,7 @@
 
 			function updateClockDate() {
 				clearInterval(clockTimer);
-				$.getJSON('/data/reset.json?v=' + Date.now * Math.random(), function(data) {
+				$.getJSON('/data/reset.json?v=' + Date.now() * Math.random(), function(data) {
 
 					var lastreset_clock = document.getElementById("lastreset");
 					var nextreset_clock = document.getElementById("nextreset");
@@ -85,7 +85,7 @@
 			</thead>
 		</table>
 		<h2>chat</h2>
-	<iframe src="https://webchat.esper.net/?nick=&channels=steamgame&fg_color=f0f0f0&fg_sec_color=f0f0f0&bg_color=1e1f34" width="85%" height="400" frameBorder="0"></iframe>
+	<iframe src="https://webchat.esper.net/?nick=SG.....&channels=steamgame&prompt=0&fg_color=f0f0f0&fg_sec_color=f0f0f0&bg_color=1e1f34" width="85%" height="400" frameBorder="0"></iframe>
 			<br/>
 			contacts: <a href="//steamcommunity.com/id/chauffer">steam</a> <a href="//github.com/chauffer">github</a><br/>
 			<a href="https://github.com/chauffer/steamSummerMinigame">autoclicker</a><br/> - api: <a href="/data/api/leaderboard.json">leaderboard</a> <a href="/data/api/all.json">all</a><br/>
